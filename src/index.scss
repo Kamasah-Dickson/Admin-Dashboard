@@ -5,4 +5,7 @@
 @tailwind utilities;
 
 @layer base {
+	* {
+		font-family: "Nunito", sans-serif;
+	}
 }
