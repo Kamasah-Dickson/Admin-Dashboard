@@ -3,7 +3,7 @@ import { lists, main, service, useful, user } from "../Data/sidebarData";
 
 function Sidebar() {
 	return (
-		<div className=" h-screen flex-[1] border-r-1 border-gray-100 bg-white">
+		<div className="h-screen flex-[1] border-r-1 border-gray-100 bg-white">
 			{/* top-div */}
 			<div className="flex h-[50px] items-center justify-center">
 				<span className="cursor-pointer text-2xl font-bold text-purple-800">
