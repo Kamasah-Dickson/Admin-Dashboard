@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { lists, main, service, useful, user } from "../assets/Data/sidebarData";
+import { lists, main, service, useful, user } from "../Data/sidebarData";
 
 function Sidebar() {
 	return (
@@ -21,7 +21,7 @@ function Sidebar() {
 								className="flex cursor-pointer items-center justify-start gap-2 p-[5px] hover:bg-[#ece8ffa8]"
 							>
 								<p className="text-lg text-[#7451f8]">{data.icon}</p>
-								<p className="text-xl font-normal  text-gray-700">
+								<p className="text-[18px] font-normal  text-gray-700">
 									{data.name}
 								</p>
 							</li>
@@ -35,7 +35,9 @@ function Sidebar() {
 								className="flex cursor-pointer items-center justify-start gap-2 p-[5px]  hover:bg-[#ece8ffa8]"
 							>
 								<p className="text-lg text-[#7451f8]">{data.icon}</p>
-								<p className="text-xl font-normal text-gray-700">{data.name}</p>
+								<p className="text-[18px] font-normal text-gray-700">
+									{data.name}
+								</p>
 							</li>
 						);
 					})}
@@ -49,7 +51,7 @@ function Sidebar() {
 								className="flex cursor-pointer items-center justify-start gap-2 p-[5px]  hover:bg-[#ece8ffa8]"
 							>
 								<p className="text-lg text-[#7451f8]">{data.icon}</p>
-								<p className="text-xl font-normal  text-gray-700">
+								<p className="text-[18px] font-normal  text-gray-700">
 									{data.name}
 								</p>
 							</li>
@@ -65,7 +67,9 @@ function Sidebar() {
 								className="flex cursor-pointer items-center justify-start gap-2 p-[5px]  hover:bg-[#ece8ffa8]"
 							>
 								<p className="text-lg text-[#7451f8]">{data.icon}</p>
-								<p className="text-xl font-normal text-gray-700">{data.name}</p>
+								<p className="text-[18px] font-normal text-gray-700">
+									{data.name}
+								</p>
 							</li>
 						);
 					})}
@@ -77,7 +81,9 @@ function Sidebar() {
 								key={data.path}
 							>
 								<p className="text-lg text-[#7451f8]">{data.icon}</p>
-								<p className="text-xl font-normal text-gray-700">{data.name}</p>
+								<p className="text-[18px] font-normal text-gray-700">
+									{data.name}
+								</p>
 							</li>
 						);
 					})}
