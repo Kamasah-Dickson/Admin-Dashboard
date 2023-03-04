@@ -6,7 +6,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 function Featured() {
 	return (
-		<div className="flex-[2] p-3 shadow-md">
+		<div className="flex-[2] p-3 py-6 shadow-md">
 			{/* top */}
 			<div className="flex justify-between text-[grey]">
 				<h1 className="text-[17px]">Total Revenue</h1>
