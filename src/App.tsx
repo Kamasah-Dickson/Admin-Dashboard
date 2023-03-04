@@ -5,6 +5,7 @@ import NewPage from "./Pages/New/NewPage";
 import SinglePage from "./Pages/Single/SinglePage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.scss";
+import { productInputs, userInputs } from "./formSource";
 
 function App() {
 	return (
@@ -16,12 +17,20 @@ function App() {
 					<Route path="users">
 						<Route index element={<List />} />
 						<Route path=":userId" element={<SinglePage />} />
-						<Route path="new" element={<NewPage />} />
+						<Route
+							path="new"
+							element={<NewPage inputs={userInputs} title="Add New User" />}
+						/>
 					</Route>
 					<Route path="products">
 						<Route index element={<List />} />
 						<Route path=":productId" element={<SinglePage />} />
-						<Route path="new" element={<NewPage />} />
+						<Route
+							path="new"
+							element={
+								<NewPage inputs={productInputs} title="Add New Product" />
+							}
+						/>
 					</Route>
 				</Route>
 			</Routes>
