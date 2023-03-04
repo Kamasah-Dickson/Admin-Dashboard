@@ -23,6 +23,7 @@ function Home() {
 					<Chart aspect={2 / 1} title={"Last 5 Months (Revenue)"} />
 				</div>
 				{/* list-container */}
+
 				<div className="mt-14 px-5">
 					<div className="shadow-lg">
 						<div className="px-5 py-2 text-xl font-medium text-[grey]">
