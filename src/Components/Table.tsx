@@ -118,6 +118,7 @@ function Tables() {
 					{rows.map((row) => (
 						<TableRow key={row.id}>
 							<TableCell>{row.id}</TableCell>
+							<TableCell>{row.product}</TableCell>
 							<TableCell>
 								<div className="flex items-center justify-start">
 									<div className="mr-3 h-[35px] w-[35px]">
@@ -127,10 +128,9 @@ function Tables() {
 											alt={row.customer}
 										/>
 									</div>
-									<p>{row.product}</p>
+									<p>{row.customer}</p>
 								</div>
 							</TableCell>
-							<TableCell>{row.customer}</TableCell>
 							<TableCell>{row.date}</TableCell>
 							<TableCell>{row.amount}</TableCell>
 							<TableCell>{row.method}</TableCell>
