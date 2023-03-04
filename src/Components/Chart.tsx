@@ -2,7 +2,6 @@ import {
 	AreaChart,
 	Area,
 	XAxis,
-	YAxis,
 	CartesianGrid,
 	Tooltip,
 	ResponsiveContainer,
@@ -31,11 +30,18 @@ const data = [
 	},
 ];
 
-function Chart() {
+type aspectRatio = number;
+
+interface aspectProp {
+	aspect: aspectRatio;
+	title: string;
+}
+
+function Chart({ aspect, title }: aspectProp) {
 	return (
-		<div className="h-[405px] flex-[4] p-2 shadow-md">
-			<div className="py-2 text-lg text-[gray]">Last 5 Months (Revenue)</div>
-			<ResponsiveContainer width="100%" aspect={2 / 1}>
+		<div className="flex-[4] shadow-md">
+			<div className="p-2 text-lg text-[gray]">{title}</div>
+			<ResponsiveContainer width="100%" aspect={aspect}>
 				<AreaChart
 					width={730}
 					height={250}
