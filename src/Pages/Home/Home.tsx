@@ -20,7 +20,7 @@ function Home() {
 				{/* //chat container */}
 				<div className="mt-5 flex items-center justify-between gap-3 px-5">
 					<Featured />
-					<Chart />
+					<Chart aspect={2 / 1} title={"Last 5 Months (Revenue)"} />
 				</div>
 				{/* list-container */}
 				<div className="mt-14 px-5">
