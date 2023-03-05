@@ -101,25 +101,25 @@ function Tables() {
 	];
 
 	return (
-		<TableContainer component={Paper} className="my-5">
+		<TableContainer component={Paper} className="my-5 table">
 			<Table sx={{ minWidth: 650 }} aria-label="simple table">
 				<TableHead>
 					<TableRow>
-						<TableCell>Tracking ID</TableCell>
-						<TableCell>Product</TableCell>
-						<TableCell>Customer</TableCell>
-						<TableCell>Date</TableCell>
-						<TableCell>Amount</TableCell>
-						<TableCell>Payment Method</TableCell>
-						<TableCell>Status</TableCell>
+						<TableCell className="table-cell">Tracking ID</TableCell>
+						<TableCell className="table-cell">Product</TableCell>
+						<TableCell className="table-cell">Customer</TableCell>
+						<TableCell className="table-cell">Date</TableCell>
+						<TableCell className="table-cell">Amount</TableCell>
+						<TableCell className="table-cell">Payment Method</TableCell>
+						<TableCell className="table-cell">Status</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{rows.map((row) => (
 						<TableRow key={row.id}>
-							<TableCell>{row.id}</TableCell>
-							<TableCell>{row.product}</TableCell>
-							<TableCell>
+							<TableCell className="table-cell">{row.id}</TableCell>
+							<TableCell className="table-cell">{row.product}</TableCell>
+							<TableCell className="table-cell">
 								<div className="flex items-center justify-start">
 									<div className="mr-3 h-[35px] w-[35px]">
 										<img
@@ -131,10 +131,10 @@ function Tables() {
 									<p>{row.customer}</p>
 								</div>
 							</TableCell>
-							<TableCell>{row.date}</TableCell>
-							<TableCell>{row.amount}</TableCell>
-							<TableCell>{row.method}</TableCell>
-							<TableCell>
+							<TableCell className="table-cell">{row.date}</TableCell>
+							<TableCell className="table-cell">{row.amount}</TableCell>
+							<TableCell className="table-cell">{row.method}</TableCell>
+							<TableCell className="table-cell">
 								<span
 									style={
 										row.status === "Pending"
