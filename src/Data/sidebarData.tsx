@@ -27,7 +27,7 @@ export const main = [
 	{
 		icon: <DashboardIcon />,
 		name: "Dashboard",
-		path: "dashboard",
+		path: "/",
 	},
 ];
 
@@ -35,50 +35,50 @@ export const lists = [
 	{
 		icon: <PeopleAltIcon />,
 		name: "Users",
-		path: "users",
+		path: "/users",
 	},
 	{
 		icon: <CategoryIcon />,
 		name: "Products",
-		path: "products",
+		path: "/products",
 	},
 	{
 		icon: <CreditCardIcon />,
 		name: "Orders",
-		path: "orders",
+		path: "/orders",
 	},
 	{
 		icon: <LocalShippingIcon />,
 		name: "Delivery",
-		path: "delivery",
+		path: "/delivery",
 	},
 ];
 export const useful = [
 	{
 		icon: <AutoGraphIcon />,
 		name: "Stats",
-		path: "stats",
+		path: "/stats",
 	},
 	{
 		icon: <NotificationsActiveIcon />,
 		name: "Notification",
-		path: "notification",
+		path: "/notification",
 	},
 ];
 export const service = [
 	{
 		icon: <HealthAndSafetyIcon />,
 		name: "System health",
-		path: "system%20health",
+		path: "/system%20health",
 	},
 	{
 		icon: <PsychologyIcon />,
 		name: "Logs",
-		path: "Logs",
+		path: "/Logs",
 	},
 	{
 		icon: <TuneIcon />,
 		name: "Settings",
-		path: "settings",
+		path: "/settings",
 	},
 ];
