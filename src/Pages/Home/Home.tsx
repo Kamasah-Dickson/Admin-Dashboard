@@ -4,12 +4,11 @@ import Navbar from "../../Components/Navbar";
 import Sidebar from "../../Components/Sidebar";
 import Tables from "../../Components/Table";
 import Widgets from "../../Components/Widgets";
-
 function Home() {
 	return (
 		<div className="mx-auto flex max-w-[1440px] ">
 			<Sidebar />
-			<div className="flex-[6]">
+			<div className="flex-[5]">
 				<Navbar />
 				<div className="mt-5 flex">
 					<Widgets type="user" />
