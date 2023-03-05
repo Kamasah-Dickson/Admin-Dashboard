@@ -1,4 +1,8 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
+import { useLocation } from "react-router-dom";
 
 const columns: GridColDef[] = [
 	{ field: "id", headerName: "ID", width: 70 },
@@ -44,20 +48,20 @@ const columns: GridColDef[] = [
 							? {
 									color: "goldenrod",
 									backgroundColor: "rgba(189,189,3,0.103)",
-									padding: "3px",
+									padding: "3px 5px",
 									borderRadius: "5px",
 							  }
 							: params.row.status === "active"
 							? {
 									color: "green",
 									backgroundColor: "rgba(0,128,0,0.151)",
-									padding: "3px",
+									padding: "3px 5px",
 									borderRadius: "5px",
 							  }
 							: {
 									color: "crimson",
 									backgroundColor: "#ff003349",
-									padding: "3px",
+									padding: "3px 5px",
 									borderRadius: "5px",
 							  }
 					}
@@ -147,17 +151,28 @@ const rows = [
 ];
 
 function Datatable() {
+	const [data, setData] = useState(rows);
+	const { pathname } = useLocation();
+
+	function handleDelete(id: number) {
+		setData(data.filter((data) => data.id !== id));
+	}
 	const actionColumn = [
 		{
 			field: "Action",
 			width: 200,
-			renderCell: () => {
+			renderCell: (params: any) => {
 				return (
 					<div className="flex items-center gap-4">
-						<div className="cursor-pointer rounded-md border-1 border-dotted border-[darkblue] py-[2px] px-[5px] text-[darkblue]">
-							View
-						</div>
-						<div className="cursor-pointer rounded-md border-1 border-dotted border-[crimson] py-[2px] px-[5px] text-[crimson]">
+						<Link to="/users/test">
+							<div className="viewButton cursor-pointer rounded-md border-1 border-dotted border-[darkblue] py-[2px] px-[5px] text-[darkblue]">
+								View
+							</div>
+						</Link>
+						<div
+							onClick={() => handleDelete(params.row.id)}
+							className="deleteButton cursor-pointer rounded-md border-1 border-dotted border-[crimson] py-[2px] px-[5px] text-[crimson]"
+						>
 							Delete
 						</div>
 					</div>
@@ -168,8 +183,17 @@ function Datatable() {
 	return (
 		<div className="p-5">
 			<div className="h-[600px]">
+				<div className="mb-[10px] flex  w-full items-center justify-between">
+					<h1 className="text-[20px]">Add New User</h1>
+					<Link style={{ textDecoration: "none" }} to={`${pathname}/new`}>
+						<p className=" rounded-lg border-1 border-[green] py-1 px-3 text-[16px] text-[green]">
+							Add New
+						</p>
+					</Link>
+				</div>
 				<DataGrid
-					rows={rows}
+					className="data-grid"
+					rows={data}
 					columns={columns.concat(actionColumn)}
 					checkboxSelection
 				/>
