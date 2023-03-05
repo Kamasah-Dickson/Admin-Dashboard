@@ -8,6 +8,9 @@
 	* {
 		font-family: "Nunito", sans-serif;
 	}
+	body {
+		min-height: 100vh;
+	}
 	label {
 		display: flex;
 		align-items: center;
@@ -30,5 +33,67 @@
 		font-weight: bold;
 		cursor: pointer;
 		margin-top: 10px;
+	}
+	.dark {
+		background-color: #080808f8;
+		color: white;
+		.chat-grid {
+			color: rgb(76, 49, 196);
+		}
+		.chart-stroke {
+			stroke: rgba(128, 128, 128, 0.178);
+		}
+		.table {
+			background-color: #111;
+		}
+		.table-cell {
+			color: gray;
+		}
+		.icon {
+			color: white;
+		}
+		.navbar {
+			border-color: rgba(255, 255, 255, 0.13);
+		}
+		.search {
+			border-color: gray;
+		}
+		.sidebar {
+			background-color: #080808f8;
+			border-color: rgba(255, 255, 255, 0.13);
+			color: white;
+			.logo {
+				color: gray;
+			}
+			.link {
+				color: white;
+			}
+			.link-hover {
+				&:hover {
+					background-color: #212135;
+				}
+			}
+		}
+
+		hr {
+			border-color: rgba(255, 255, 255, 0.13);
+		}
+		.data-grid {
+			color: gray;
+			border: none;
+			transition: 0.3s ease;
+			&:hover {
+				color: white;
+			}
+		}
+
+		.viewButton,
+		.deleteButton {
+			color: gray;
+			border: none;
+		}
+		input {
+			background-color: transparent;
+		}
 	}
 }
