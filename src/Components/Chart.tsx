@@ -7,6 +7,9 @@ import {
 	ResponsiveContainer,
 } from "recharts";
 
+import { useContext } from "react";
+import { themeContextProvider } from "../context/darkModeContext";
+
 const data = [
 	{
 		name: "January",
@@ -38,10 +41,16 @@ interface aspectProp {
 }
 
 function Chart({ aspect, title }: aspectProp) {
+	const { dark } = useContext(themeContextProvider);
+
 	return (
-		<div className="flex-[4] shadow-md">
-			<div className="p-2 text-lg text-[gray]">{title}</div>
-			<ResponsiveContainer width="100%" aspect={aspect}>
+		<div
+			className={`flex-[4] ${
+				!dark ? "shadow-md" : "shadow-md shadow-[#0000008c]"
+			}`}
+		>
+			<div className=" p-2 text-lg text-[gray]">{title}</div>
+			<ResponsiveContainer className="chat-grid" width="100%" aspect={aspect}>
 				<AreaChart
 					width={730}
 					height={250}
@@ -55,7 +64,10 @@ function Chart({ aspect, title }: aspectProp) {
 						</linearGradient>
 					</defs>
 					<XAxis dataKey="name" stroke="gray" />
-					<CartesianGrid strokeDasharray="3 3" className="stroke-gray-200" />
+					<CartesianGrid
+						strokeDasharray="3 3"
+						className="chart-stroke stroke-gray-200"
+					/>
 					<Tooltip />
 					<Area
 						type="monotone"
