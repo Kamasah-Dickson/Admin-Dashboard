@@ -3,10 +3,18 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import "react-circular-progressbar/dist/styles.css";
+import { useContext } from "react";
+import { themeContextProvider } from "../context/darkModeContext";
 
 function Featured() {
+	const { dark } = useContext(themeContextProvider);
+
 	return (
-		<div className="flex-[2] p-3 py-6 shadow-md">
+		<div
+			className={`flex-[2] p-3 py-6 ${
+				!dark ? "shadow-md" : "shadow-md shadow-[#000000a9]"
+			}`}
+		>
 			{/* top */}
 			<div className="flex justify-between text-[grey]">
 				<h1 className="text-[17px]">Total Revenue</h1>
