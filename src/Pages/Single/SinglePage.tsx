@@ -8,7 +8,7 @@ function SinglePage() {
 	return (
 		<div className="flex w-full">
 			<Sidebar />
-			<div className="flex-[6]">
+			<div className="flex-[5]">
 				<Navbar />
 				{/* top */}
 				<div className="flex items-center gap-5 p-5">
