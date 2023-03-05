@@ -21,10 +21,10 @@ export const userInputs = [
 		id: "input3",
 		label: "Password",
 		type: "password",
-		placeholder: "sds",
+		placeholder: "",
 	},
 	{
-		id: "input4",
+		id: "input7",
 		label: "Telephone",
 		type: "tel",
 		placeholder: "+2335945710",
