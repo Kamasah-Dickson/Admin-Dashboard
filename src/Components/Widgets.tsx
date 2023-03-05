@@ -3,6 +3,9 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
 import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
+import { useContext } from "react";
+import { themeContextProvider } from "../context/darkModeContext";
+import { Link } from "react-router-dom";
 
 type Widget = "user" | "order" | "earnings" | "balance";
 
@@ -13,7 +16,6 @@ interface WidgetProp {
 function Widgets({ type }: WidgetProp) {
 	let data;
 
-	const amount = 200;
 	const diff = 30;
 
 	switch (type) {
@@ -21,6 +23,7 @@ function Widgets({ type }: WidgetProp) {
 			data = {
 				title: "USERS",
 				isMoney: false,
+				amount: 200,
 				link: "See all users",
 				icon: <PersonIcon fontSize="medium" className=" text-[crimson]" />,
 				bg: " bg-[#ff003349]",
@@ -30,6 +33,7 @@ function Widgets({ type }: WidgetProp) {
 			data = {
 				title: "ORDERS",
 				isMoney: false,
+				amount: 765,
 				link: "View all orders",
 				icon: (
 					<ShoppingCartOutlinedIcon
@@ -44,6 +48,7 @@ function Widgets({ type }: WidgetProp) {
 			data = {
 				title: "EARNINGS",
 				isMoney: true,
+				amount: 483,
 				link: "View net earnings",
 				icon: (
 					<AttachMoneyOutlinedIcon fontSize="medium" className="text-[green]" />
@@ -56,6 +61,7 @@ function Widgets({ type }: WidgetProp) {
 				title: "BALANCE",
 				isMoney: true,
 				link: "See details",
+				amount: 897,
 				icon: (
 					<AccountBalanceOutlinedIcon
 						fontSize="medium"
@@ -68,18 +74,25 @@ function Widgets({ type }: WidgetProp) {
 		default:
 			break;
 	}
+	const { dark } = useContext(themeContextProvider);
 	return (
 		<div className="flex w-full items-center justify-between gap-5 rounded-md px-5 ">
-			<div className="flex w-full justify-between p-3 shadow-md">
+			<div
+				className={`flex w-full justify-between p-3 
+					${!dark ? "shadow-md" : "shadow-md shadow-[#000000]"}
+			`}
+			>
 				<div className="flex flex-col">
 					<span className="text-lg text-[14px] font-bold text-[rgb(163,161,161)]">
 						{data?.title}
 					</span>
 					<span className="text-[28px] font-light">
 						{data?.isMoney && "$"}
-						{amount}
+						{data?.amount}
 					</span>
-					<span className="border-b-2 text-[14px] ">{data?.link}</span>
+					<Link to="/users">
+						<span className="border-b-2 text-[14px] ">{data?.link}</span>
+					</Link>
 				</div>
 				<div className="flex flex-col items-end justify-between ">
 					<div className="flex items-start text-[green]">
