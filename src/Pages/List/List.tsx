@@ -6,7 +6,7 @@ function List() {
 	return (
 		<div className="flex w-full">
 			<Sidebar />
-			<div className="flex-[6]">
+			<div className="flex-[5]">
 				<Navbar />
 				<Datatable />
 			</div>
